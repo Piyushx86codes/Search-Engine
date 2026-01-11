@@ -1,0 +1,245 @@
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f4f6; /* slightly darker bg so borders pop */
+  color: #1f2937;
+  line-height: 1.5;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero-content {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.hero-content h1 {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  color: #111827;
+}
+
+.tagline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 1rem;
+  color: #4b5563;
+  flex-wrap: wrap;
+}
+
+/* =========================
+   PLATFORM ICONS
+========================= */
+.Platform-icon {
+  height: 28px;
+  object-fit: contain;
+}
+
+/* =========================
+   SEARCH FORM
+========================= */
+.search-form {
+  width: 100%;
+  max-width: 520px;
+  margin: 20px 0;
+}
+
+.query-input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 1rem;
+  border-radius: 10px;
+
+  /* visible border */
+  border: 1.5px solid #cbd5e1;
+
+  outline: none;
+  background: #ffffff;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(203, 213, 225, 0.8),
+    0 2px 6px rgba(0, 0, 0, 0.08);
+
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.query-input:focus {
+  border-color: #4f46e5;
+  box-shadow:
+    inset 0 0 0 1px rgba(79, 70, 229, 0.6),
+    0 0 0 2px rgba(79, 70, 229, 0.2),
+    0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   CTA TEXT
+========================= */
+.cta {
+  margin-bottom: 20px;
+  color: #6b7280;
+  text-align: center;
+}
+
+/* =========================
+   SPINNER
+========================= */
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid #4f46e5;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 20px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   RESULTS GRID
+========================= */
+.results {
+  width: 100%;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+}
+
+/* =========================
+   RESULT CARD
+========================= */
+.result-card {
+  background: #ffffff;
+  border-radius: 14px;
+
+  /* STRONG, VISIBLE BORDER */
+  border: 2px solid #cbd5e1;
+
+  padding: 18px;
+
+  /* inset + outer shadow so border never disappears */
+  box-shadow:
+    inset 0 0 0 1px rgba(203, 213, 225, 0.9),
+    0 10px 28px rgba(0, 0, 0, 0.12);
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.result-card:hover {
+  transform: translateY(-5px);
+  border-color: #6366f1;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(99, 102, 241, 0.8),
+    0 18px 36px rgba(0, 0, 0, 0.16);
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
+.result-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.result-meta {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* =========================
+   TAGS
+========================= */
+.result-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background: #eef2ff;
+  color: #4338ca;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid #c7d2fe;
+}
+
+/* =========================
+   CARD BUTTON / LINK
+========================= */
+.result-link {
+  margin-top: auto;
+  text-decoration: none;
+  text-align: center;
+  padding: 11px;
+  border-radius: 10px;
+  background: #4f46e5;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.result-link:hover {
+  background: #4338ca;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .query-input {
+    font-size: 0.95rem;
+  }
+}
+
