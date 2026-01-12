@@ -1,126 +1,210 @@
-/* =========================
-   RESET
-========================= */
-* {
+/* Base styles */
+body {
+  font-family: sans-serif;
+  background: #f5f5f5;
   margin: 0;
-  padding: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+  /* Prevent overflow */
+  overflow: hidden;
+  word-wrap: break-word;
   box-sizing: border-box;
 }
 
-/* =========================
-   BODY
-========================= */
-body {
-  font-family: Arial, sans-serif;
-  background: #f3f4f6; /* slightly darker bg so borders pop */
-  color: #1f2937;
-  line-height: 1.5;
-}
-
-/* =========================
-   CONTAINER
-========================= */
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* =========================
-   HERO SECTION
-========================= */
+/* Hero section */
 .hero-content {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
 }
 
-.hero-content h1 {
-  font-size: 2.2rem;
-  margin-bottom: 12px;
-  color: #111827;
-}
-
-.tagline {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  font-size: 1rem;
-  color: #4b5563;
-  flex-wrap: wrap;
-}
-
-/* =========================
-   PLATFORM ICONS
-========================= */
-.Platform-icon {
-  height: 28px;
+/* Icons */
+.platform-icon {
+  width: 24px;
+  height: 24px;
   object-fit: contain;
+  transition: filter 0.2s ease;
+  max-width: 100%;
 }
 
-/* =========================
-   SEARCH FORM
-========================= */
+/* Tagline text */
+.tagline {
+  font-size: 1.125rem;
+  color: #333;
+  margin: 8px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap; /* prevent overflow */
+  word-wrap: break-word;
+}
+
+/* Call to action */
+.cta {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 1rem auto;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+/* Headings */
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #0070f3, #0a81c5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* Search form */
 .search-form {
-  width: 100%;
-  max-width: 520px;
-  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap; /* allow stacking on small screens */
+  gap: 8px;
 }
 
 .query-input {
-  width: 100%;
-  padding: 14px 16px;
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Buttons */
+button {
+  background-color: #0070f3;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
   font-size: 1rem;
-  border-radius: 10px;
-
-  /* visible border */
-  border: 1.5px solid #cbd5e1;
-
-  outline: none;
-  background: #ffffff;
-
-  box-shadow:
-    inset 0 0 0 1px rgba(203, 213, 225, 0.8),
-    0 2px 6px rgba(0, 0, 0, 0.08);
-
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  padding: 0.6em 1.2em;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  box-shadow: 0 2px 6px rgba(0, 112, 243, 0.4);
 }
 
-.query-input:focus {
-  border-color: #4f46e5;
-  box-shadow:
-    inset 0 0 0 1px rgba(79, 70, 229, 0.6),
-    0 0 0 2px rgba(79, 70, 229, 0.2),
-    0 6px 14px rgba(0, 0, 0, 0.12);
+button:hover {
+  transform: translateY(-1px);
 }
 
-/* =========================
-   CTA TEXT
-========================= */
-.cta {
-  margin-bottom: 20px;
-  color: #6b7280;
-  text-align: center;
+button:active {
+  transform: translateY(0);
 }
 
-/* =========================
-   SPINNER
-========================= */
-.spinner {
-  width: 32px;
-  height: 32px;
-  border: 4px solid #e5e7eb;
-  border-top: 4px solid #4f46e5;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin: 20px 0;
+/* Results grid */
+.results {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+  margin-top: 20px;
 }
 
+/* Individual cards */
+.card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  padding: 12px 16px;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Featured card */
+.card.featured {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, #e6f7ff, #ffffff);
+  border: none;
+  border-left: 6px solid #0070f3;
+  padding: 24px;
+  box-shadow: 0 4px 8px rgba(0, 112, 243, 0.3);
+  position: relative;
+  transform: none; /* avoid overflow from scaling */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card.featured:hover {
+  transform: none;
+  box-shadow: 0 6px 12px rgba(0, 112, 243, 0.4);
+}
+
+.card.featured::before {
+  content: "Top Result";
+  position: absolute;
+  top: -8px;
+  left: 16px;
+  background: #0070f3;
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Card header */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+/* Card logo */
+.platform-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  max-width: 100%;
+}
+
+/* Card title */
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0070f3;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.card-title:hover {
+  text-decoration: underline;
+}
+
+/* Hidden elements */
 .hidden {
   display: none;
+}
+
+/* Spinner */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top-color: #0070f3;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 1em auto;
 }
 
 @keyframes spin {
@@ -129,117 +213,41 @@ body {
   }
 }
 
-/* =========================
-   RESULTS GRID
-========================= */
-.results {
-  width: 100%;
-  margin-top: 30px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 22px;
+/* Media queries */
+@media (min-width: 700px) {
+  .results {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-/* =========================
-   RESULT CARD
-========================= */
-.result-card {
-  background: #ffffff;
-  border-radius: 14px;
+@media (max-width: 500px) {
+  .tagline {
+    font-size: 1rem;
+    flex-wrap: wrap;
+  }
+  .cta {
+    font-size: 0.8rem;
+  }
+}
 
-  /* STRONG, VISIBLE BORDER */
-  border: 2px solid #cbd5e1;
+@media (max-width: 425px) {
+  .search-form {
+    flex-direction: column;
+  }
+}
 
-  padding: 18px;
+/* Make images inside paragraphs responsive */
+p img {
+  display: inline-block;
+  height: auto;
+}
 
-  /* inset + outer shadow so border never disappears */
-  box-shadow:
-    inset 0 0 0 1px rgba(203, 213, 225, 0.9),
-    0 10px 28px rgba(0, 0, 0, 0.12);
-
+/* Align all <p> text and images on a single line */
+p {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
-}
-
-.result-card:hover {
-  transform: translateY(-5px);
-  border-color: #6366f1;
-
-  box-shadow:
-    inset 0 0 0 1px rgba(99, 102, 241, 0.8),
-    0 18px 36px rgba(0, 0, 0, 0.16);
-}
-
-/* =========================
-   CARD CONTENT
-========================= */
-.result-title {
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: #111827;
-}
-
-.result-meta {
-  font-size: 0.9rem;
-  color: #6b7280;
-}
-
-/* =========================
-   TAGS
-========================= */
-.result-tags {
-  display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   gap: 8px;
+  flex-wrap: nowrap; /* prevent wrapping */
+  overflow-x: auto;  /* scroll if content is too wide */
+  white-space: nowrap;
 }
-
-.tag {
-  background: #eef2ff;
-  color: #4338ca;
-  padding: 5px 10px;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  border: 1px solid #c7d2fe;
-}
-
-/* =========================
-   CARD BUTTON / LINK
-========================= */
-.result-link {
-  margin-top: auto;
-  text-decoration: none;
-  text-align: center;
-  padding: 11px;
-  border-radius: 10px;
-  background: #4f46e5;
-  color: #ffffff;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: background 0.2s ease, transform 0.1s ease;
-}
-
-.result-link:hover {
-  background: #4338ca;
-  transform: translateY(-1px);
-}
-
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
-@media (max-width: 600px) {
-  .hero-content h1 {
-    font-size: 1.8rem;
-  }
-
-  .query-input {
-    font-size: 0.95rem;
-  }
-}
-

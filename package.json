@@ -1,0 +1,24 @@
+{
+  "name": "dsa-search-engine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Piyushx86codes/Search-Engine.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Piyushx86codes/Search-Engine/issues"
+  },
+  "homepage": "https://github.com/Piyushx86codes/Search-Engine#readme",
+  "dependencies": {
+    "puppeteer": "^24.35.0"
+  }
+}
