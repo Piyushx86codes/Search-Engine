@@ -168,7 +168,7 @@ async function scrapeCodeforces() {
 }
 
 
-// scrapeLeetcodeProblems();
+scrapeLeetcodeProblems();
 scrapeCodeforces();
 
 
